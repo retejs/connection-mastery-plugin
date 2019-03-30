@@ -1,0 +1,30 @@
+{
+  "name": "rete-connection-mastery-plugin",
+  "version": "0.1.0",
+  "description": "",
+  "main": "build/connection-mastery-plugin.common.js",
+  "module": "build/connection-mastery-plugin.esm.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "build": "rete --build rete.config.js",
+    "build:dev": "rete --build rete.config.js --watch",
+    "prepublishOnly": "npm run build",
+    "prebuild": "npm run lint && npm run types",
+    "lint": "tsc",
+    "types": "tsc src/index.ts --target es5 --declaration --outDir ./types --downlevelIteration --emitDeclarationOnly"
+  },
+  "author": "Vitaliy Stoliarov",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/retejs/connection-mastery-plugin.git"
+  },
+  "dependencies": {
+    "rete": "^1.2.0-rc.9",
+    "rete-connection-plugin": "^0.6.3"
+  },
+  "devDependencies": {
+    "rete-cli": "0.6.0-rc.3",
+    "typescript": "3.3.3333"
+  }
+}
