@@ -20,7 +20,7 @@
     "url": "https://github.com/retejs/connection-mastery-plugin.git"
   },
   "dependencies": {
-    "rete": "^1.2.0-rc.9",
+    "rete": "^1.4.0",
     "rete-connection-plugin": "^0.6.3"
   },
   "devDependencies": {
