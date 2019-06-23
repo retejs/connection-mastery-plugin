@@ -1,22 +1,17 @@
 import { NodeEditor, Input, Output } from "rete";
+import { holdKey } from "../utils";
 
-export default function (editor: NodeEditor, key: string) {
+export default function (editor: NodeEditor, keyCode: string) {
+    const holder = holdKey(keyCode);
     let mouseEvent: MouseEvent | null = null;
     let targetIO: Input | Output | null = null;
-    let ctrl = false;
 
     editor.view.container.addEventListener('mousemove', e => {
         mouseEvent = e;
     });
-    document.addEventListener('keydown', e => {
-        if(e.key === key) ctrl = true;
-    });
-    document.addEventListener('keyup', e => {
-        if(e.key === key) ctrl = false;
-    })
     editor.on('connectiondrop', io => {
         if(!mouseEvent) throw 'Error not found';
-        if(!ctrl) return;
+        if(!holder.holding) return;
 
         targetIO = io;
 
@@ -25,7 +20,7 @@ export default function (editor: NodeEditor, key: string) {
         })
     });
     editor.on('nodecreated', node => {
-        if(!ctrl) return;
+        if(!holder.holding) return;
         const io = targetIO;
 
         if(io instanceof Output) {
@@ -53,4 +48,5 @@ export default function (editor: NodeEditor, key: string) {
             }
         }
     });
+    editor.on('destroy', () => holder.destroy());
 }
