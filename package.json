@@ -1,6 +1,6 @@
 {
   "name": "rete-connection-mastery-plugin",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "main": "build/connection-mastery-plugin.common.js",
   "module": "build/connection-mastery-plugin.esm.js",
