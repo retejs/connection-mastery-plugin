@@ -28,14 +28,17 @@ export default function (editor: NodeEditor, key: string) {
         if(!ctrl) return;
         const io = targetIO;
 
-        console.log(io);
-
         if(io instanceof Output) {
             const inputs = Array.from(node.inputs.values());
             const compatibleInput = inputs.find(i => io.socket.compatibleWith(i.socket))
 
             if(compatibleInput) {
-                console.log('compatibleInput');
+                if (!compatibleInput.multipleConnections && compatibleInput.hasConnection())
+                    editor.removeConnection(compatibleInput.connections[0]);
+                
+                if (!io.multipleConnections && io.hasConnection())
+                    editor.removeConnection(io.connections[0]);
+
                 editor.connect(io, compatibleInput)
             }
         } else if(io instanceof Input) {
@@ -43,7 +46,9 @@ export default function (editor: NodeEditor, key: string) {
             const compatibleOutput = outputs.find(o => o.socket.compatibleWith(io.socket))
 
             if(compatibleOutput) {
-                console.log('compatibleOutput');
+                if(!compatibleOutput.multipleConnections && compatibleOutput.hasConnection())
+                    editor.removeConnection(compatibleOutput.connections[0])
+
                 editor.connect(compatibleOutput, io)
             }
         }
