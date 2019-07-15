@@ -1,7 +1,6 @@
 import { NodeEditor } from 'rete';
 import initializeCreateAndConnect from './features/create-and-connect';
 import initializePickConnection from './features/pick-connection';
-import 'rete-connection-plugin/types';
 
 type Params = {
     createAndConnect?: boolean | { keyCode: string };

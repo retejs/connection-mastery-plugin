@@ -1,3 +1,4 @@
+/// <reference types="rete-connection-plugin" />
 import { NodeEditor, Input, Output } from "rete";
 import { holdKey } from "../utils";
 
