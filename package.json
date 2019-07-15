@@ -1,6 +1,6 @@
 {
   "name": "rete-connection-mastery-plugin",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "",
   "main": "build/connection-mastery-plugin.common.js",
   "module": "build/connection-mastery-plugin.esm.js",
@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "rete": "^1.4.0",
-    "rete-connection-plugin": "^0.6.3"
+    "rete-connection-plugin": "^0.8.1"
   },
   "devDependencies": {
     "rete-cli": "0.6.0-rc.3",
