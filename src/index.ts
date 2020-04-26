@@ -8,7 +8,7 @@ type Params = {
 } 
 
 function install(editor: NodeEditor, params: Params) {
-    const createAndConnect = params.createAndConnect === false ? false : (params.createAndConnect || { keyCode: 'Control' })
+    const createAndConnect = params.createAndConnect === false ? false : (params.createAndConnect || { keyCode: 'ControlLeft' })
     const pickConnection = params.pickConnection === false ? false : (params.pickConnection || { keyCode: 'KeyD' })
 
     if(typeof createAndConnect === 'object') initializeCreateAndConnect(editor, createAndConnect.keyCode);

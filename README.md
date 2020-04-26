@@ -32,7 +32,7 @@ editor.use(ConnectionMasteryPlugin, {
 });
 // or change keys
 editor.use(ConnectionMasteryPlugin, {
-    createAndConnect: { keyCode: 'Control' },
+    createAndConnect: { keyCode: 'ControlLeft' },
     pickConnection: { keyCode: 'KeyD' }
 });
 ```
