@@ -24,7 +24,7 @@
     "rete-connection-plugin": "^0.8.1"
   },
   "devDependencies": {
-    "rete-cli": "0.6.0-rc.3",
+    "rete-cli": "0.6.1",
     "rete": "^1.4.0",
     "rete-connection-plugin": "^0.8.1",
     "typescript": "3.3.3333"
